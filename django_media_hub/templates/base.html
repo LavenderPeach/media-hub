@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    {% block css_files %} {% endblock %}
+</head>
+<body>
+    <header> 
+        <h1>Lavender Peach</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="{% url 'movies' %}">Movies</a></li>
+            <li><a href="{% url 'television' %}">Television</a></li>
+            <li><a href="{% url 'books' %}">Books</a></li>
+            <li><a href="{% url 'video_games' %}">Video Games</a></li>
+        </ul>
+    </nav>
+    <content>
+        {% block content%}
+        {%endblock%}
+    </content>
+
+    <footer>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#press">Press</a></li>
+            <li><a href="#careers">Careers</a></li>
+            <li><a href="#events">Events</a></li>
+            <li><a href="#terms">Terms</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </footer>
+</body>
+</html>
