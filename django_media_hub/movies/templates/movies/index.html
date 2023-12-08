@@ -3,28 +3,6 @@
 {% block title %}
     Movies
 {% endblock %}
+
 <h1>Welcome to the Movies Page!</h1>
 <a href="{% url 'movies_index' %}">Go to Movies</a>
-
-{% block content %}
-    <newsSection>
-        <h2>What's New?</h2>
-        {% comment %} API call(s) for movie news {% endcomment %}
-    </newsSection>
-
-    <featuredMovies>
-        <h2>Featured Movies</h2>
-        {% comment %} Movie Carousel showing most popular movies {% endcomment %}
-    </featuredMovies>
-
-    <following>
-        <h2>From Friends</h2>
-{% comment %} Add logic to fetch and display movies logged by people following {% endcomment %}
-    </following>
-
-    <recommendations>
-        <h2>You Might Like...</h2>
-        {% comment %} Write logic for a recommendation system to provide feedback to users. {% endcomment %}
-    </recommendations>
-        {%endblock%}
-

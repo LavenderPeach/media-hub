@@ -13,15 +13,41 @@
 
     <nav>
         <ul>
-            <li><a href="{% url 'movies' %}">Movies</a></li>
-            <li><a href="{% url 'television' %}">Television</a></li>
-            <li><a href="{% url 'books' %}">Books</a></li>
-            <li><a href="{% url 'video_games' %}">Video Games</a></li>
+            <li><a href="{% url 'movies_index' %}">Movies</a></li>
+            <li><a href="{% url 'television_index' %}">Television</a></li>
+            <li><a href="{% url 'books_index' %}">Books</a></li>
+            <li><a href="{% url 'video_games_index' %}">Video Games</a></li>
         </ul>
     </nav>
     <content>
-        {% block content%}
-        {%endblock%}
+        <newsSection>
+            <h2>What's New?</h2>
+            {% block news_content %}
+            {% comment %} API call(s) for entertainment news {% endcomment %}
+            {% endblock %}
+        </newsSection>
+
+        <featured>
+            <h2>Featured</h2>
+            {% block featured_content %}
+            {% comment %} Movie Carousel showing most popular movies {% endcomment %}
+            {% endblock %}
+        </featured>
+
+        <following>
+            <h2>From Friends</h2>
+            {% block following_content %}
+    {% comment %} Add logic to fetch and display movies logged by people following {% endcomment %}
+            {% endblock %}
+        </following>
+    
+        <recommendations>
+            <h2>You Might Like...</h2>
+            {% block recommendation %}
+            {% comment %} Write logic for a recommendation system to provide feedback to users. {% endcomment %}
+            {% endblock %}
+        </recommendations>
+
     </content>
 
     <footer>
